@@ -27,7 +27,7 @@ void rank_course1(void);//排序-高等数学
 void rank_course2(void);//排序-英语
 void rank_course3(void);//排序-C语言
 void rank_course4(void);//排序-体育
-void rank_course5(void);//拍学-课程设计
+void rank_course5(void);//排序-课程设计
 void revise_number(void);//编辑-学号查询
 void revise_name(void);//编辑-姓名查询
 int revise_number_choice(void);//编辑-学号查询-选择功能
