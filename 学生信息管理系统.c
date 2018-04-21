@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<string.h>
 #define STARS "*****************"
 #define MAX 50
@@ -74,37 +74,37 @@ void menu(void)
 	getchar();//防止输入错误导致程序死循环
 	switch (choice)
 	{
-	case 1: 
-		typein();     
-		menu(); 
+	case 1:
+		typein();
+		menu();
 		break;
-	case 2: 
-		save();        
+	case 2:
+		save();
 		menu();
 		break;
 	case 3:
-		display();    
-		menu(); 
+		display();
+		menu();
 		break;
-	case 4: 
-		revise();     
-		menu(); 
+	case 4:
+		revise();
+		menu();
 		break;
-	case 5: 
+	case 5:
 		deletedata();
 		menu();
 		break;
-	case 6: 
+	case 6:
 		rank();
 		menu();
 		break;
-	case 7: 
-		search();    
-		menu(); 
+	case 7:
+		search();
+		menu();
 		break;
-	case 8: 
-		exit(); 
-		return; 
+	case 8:
+		exit();
+		return;
 	default:
 		printf("输入错误！请重新输入\n");
 		menu();
@@ -208,10 +208,10 @@ void search(void)
 	case 9: score5_search(); break;
 	case 10: break;
 	default:
-	    {
+	{
 		printf("输入错误！请重新输入\n");
 		search();
-	    }
+	}
 	}
 }
 void name_search()
@@ -257,77 +257,15 @@ void phone_search()
 		printf("错误！无法查找到匹配数据");
 }
 void number_search()
-	{
-		long int number;
-		int match = 0;
-		printf("请输入查询的学号");
-		scanf("%ld", &number);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (student[i].number == number)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				printf("\n%s%s\n", STARS, STARS);
-			}
-		if (match==0)
-		printf("错误！无法查找到匹配数据");
-	}
-void age_search()
-	{
-		int age;
-		int match = 0;
-		printf("请输入查询的年龄");
-		scanf("%d", &age);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (student[i].age == age)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				printf("\n%s%s\n", STARS, STARS);
-			}
-		if (match == 0)
-			printf("错误！无法查找到匹配数据");
-	}
-void score1_search()
-	{
-		int score1;
-		int match = 0;
-		printf("请输入查询的高等数学成绩");
-		scanf("%d", &score1);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (student[i].score1 == score1)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				printf("\n%s%s\n", STARS, STARS);
-			}
-		if (match == 0)
-			printf("错误！无法查找到匹配数据");
-	}
-void score2_search()
-	{
-		int score2;
-		int match = 0;
-		printf("请输入查询的英语成绩");
-		scanf("%d", &score2);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
+{
+	long int number;
+	int match = 0;
+	printf("请输入查询的学号");
+	scanf("%ld", &number);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (student[i].number == number)
 		{
 			match++;
 			printf("\n%s%s\n", STARS, STARS);
@@ -336,96 +274,158 @@ void score2_search()
 				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
 			printf("\n%s%s\n", STARS, STARS);
 		}
-		if (match == 0)
-			printf("错误！无法查找到匹配数据");
-	}
-void score3_search()
-	{
-		int score3;
-		int match = 0;
-		printf("请输入查询的C语言成绩");
-		scanf("%d", &score3);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (student[i].score3 == score3)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				printf("\n%s%s\n", STARS, STARS);
-			}
-		if (match == 0)
-			printf("错误！无法查找到匹配数据");
-	}
-void score4_search()
-	{
-		int score4;
-		int match = 0;
-		printf("请输入查询的体育成绩");
-		scanf("%d", &score4);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (student[i].score4 == score4)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				printf("\n%s%s\n", STARS, STARS);
-			}
-		if (match == 0)
-			printf("错误！无法查找到匹配数据");
-	}
-void score5_search()
-	{
-		int score5;
-		int match = 0;
-		printf("请输入查询的课程设计成绩");
-		scanf("%d", &score5);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (student[i].score5 == score5)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				printf("\n%s%s\n", STARS, STARS);
-			}
-		if (match == 0)
-			printf("错误！无法查找到匹配数据");
-	}
-void revise()
-	{
-		int choice;
-		printf("\n%s%s\n", STARS, STARS);
-		printf("       请输入数字选择功能\n");
-		printf("       1)输入学号查找编辑对象\n");
-		printf("       2)输入姓名查找编辑对象\n");
-		printf("       3)返回上一级菜单\n");
-		printf("\n%s%s\n", STARS, STARS);
-		printf("请输入数字选择");
-		scanf("%d", &choice);
-		getchar();
-		switch (choice)
+	if (match == 0)
+		printf("错误！无法查找到匹配数据");
+}
+void age_search()
+{
+	int age;
+	int match = 0;
+	printf("请输入查询的年龄");
+	scanf("%d", &age);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (student[i].age == age)
 		{
-		case 1: revise_number(); break;
-		case 2: revise_name(); break;
-		case 3:menu(); break;
-		default:
-		    {
-			printf("输入错误！请重新输入\n");
-			revise();
-		    }
+			match++;
+			printf("\n%s%s\n", STARS, STARS);
+			printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+			printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+			printf("\n%s%s\n", STARS, STARS);
 		}
+	if (match == 0)
+		printf("错误！无法查找到匹配数据");
+}
+void score1_search()
+{
+	int score1;
+	int match = 0;
+	printf("请输入查询的高等数学成绩");
+	scanf("%d", &score1);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (student[i].score1 == score1)
+		{
+			match++;
+			printf("\n%s%s\n", STARS, STARS);
+			printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+			printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+			printf("\n%s%s\n", STARS, STARS);
+		}
+	if (match == 0)
+		printf("错误！无法查找到匹配数据");
+}
+void score2_search()
+{
+	int score2;
+	int match = 0;
+	printf("请输入查询的英语成绩");
+	scanf("%d", &score2);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+	{
+		match++;
+		printf("\n%s%s\n", STARS, STARS);
+		printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+		printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+			student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+		printf("\n%s%s\n", STARS, STARS);
 	}
+	if (match == 0)
+		printf("错误！无法查找到匹配数据");
+}
+void score3_search()
+{
+	int score3;
+	int match = 0;
+	printf("请输入查询的C语言成绩");
+	scanf("%d", &score3);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (student[i].score3 == score3)
+		{
+			match++;
+			printf("\n%s%s\n", STARS, STARS);
+			printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+			printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+			printf("\n%s%s\n", STARS, STARS);
+		}
+	if (match == 0)
+		printf("错误！无法查找到匹配数据");
+}
+void score4_search()
+{
+	int score4;
+	int match = 0;
+	printf("请输入查询的体育成绩");
+	scanf("%d", &score4);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (student[i].score4 == score4)
+		{
+			match++;
+			printf("\n%s%s\n", STARS, STARS);
+			printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+			printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+			printf("\n%s%s\n", STARS, STARS);
+		}
+	if (match == 0)
+		printf("错误！无法查找到匹配数据");
+}
+void score5_search()
+{
+	int score5;
+	int match = 0;
+	printf("请输入查询的课程设计成绩");
+	scanf("%d", &score5);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (student[i].score5 == score5)
+		{
+			match++;
+			printf("\n%s%s\n", STARS, STARS);
+			printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+			printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+			printf("\n%s%s\n", STARS, STARS);
+		}
+	if (match == 0)
+		printf("错误！无法查找到匹配数据");
+}
+void revise()
+{
+	int choice;
+	printf("\n%s%s\n", STARS, STARS);
+	printf("       请输入数字选择功能\n");
+	printf("       1)输入学号查找编辑对象\n");
+	printf("       2)输入姓名查找编辑对象\n");
+	printf("       3)返回上一级菜单\n");
+	printf("\n%s%s\n", STARS, STARS);
+	printf("请输入数字选择");
+	scanf("%d", &choice);
+	getchar();
+	switch (choice)
+	{
+	case 1: revise_number(); break;
+	case 2: revise_name(); break;
+	case 3:menu(); break;
+	default:
+	{
+		printf("输入错误！请重新输入\n");
+		revise();
+	}
+	}
+}
 void rank(void)
 {
 	printf("\n%s%s\n", STARS, STARS);
@@ -585,188 +585,188 @@ void rank_course5(void)
 	}
 }
 void revise_number(void)
-	{
-		long int number;
-		int match = 0;
-		int n;
-		printf("请输入查询的学号");
-		scanf("%ld", &number);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (student[i].number == number)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("查找到的学生信息");
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				n=revise_number_choice();
-				switch (n)
-				{
-				case 0: revise();  break;
-				case 1:
-					printf("修改后的姓名为");
-					scanf("%s", &student[i].name);
-					break;
-				case 2:
-					printf("修改后的性别为");
-					scanf("%s", &student[i].sex);
-					break;
-				case 3:
-					printf("修改后的年龄为");
-					scanf("%d", &student[i].age);
-					break;
-				case 4:
-					printf("修改后的手机号码为");
-					scanf("%s", &student[i].phone);
-					break;
-				case 5:
-					printf("修改后的高等数学成绩为");
-					scanf("%d", &student[i].score1);
-					break;
-				case 6:
-					printf("修改后的英语成绩为");
-					scanf("%d", &student[i].score2);
-					break;
-				case 7:
-					printf("修改后的C语言成绩为");
-					scanf("%d", &student[i].score3);
-					break;
-				case 8:
-					printf("修改后的体育成绩为");
-					scanf("%d", &student[i].score4);
-					break;
-				case 9:
-					printf("修改后的课程设计为");
-					scanf("%d", &student[i].score5);
-					break;
-				default:
-				{
-					printf("输入错误！请重新输入\n");
-					revise_number_choice();
-				}
-				}
-			}
-			
-		if (match == 0)
+{
+	long int number;
+	int match = 0;
+	int n;
+	printf("请输入查询的学号");
+	scanf("%ld", &number);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (student[i].number == number)
 		{
-			printf("错误！无法查找到匹配数据");
-			revise();
+			match++;
+			printf("\n%s%s\n", STARS, STARS);
+			printf("查找到的学生信息");
+			printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+			printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+			n = revise_number_choice();
+			switch (n)
+			{
+			case 0: revise();  break;
+			case 1:
+				printf("修改后的姓名为");
+				scanf("%s", &student[i].name);
+				break;
+			case 2:
+				printf("修改后的性别为");
+				scanf("%s", &student[i].sex);
+				break;
+			case 3:
+				printf("修改后的年龄为");
+				scanf("%d", &student[i].age);
+				break;
+			case 4:
+				printf("修改后的手机号码为");
+				scanf("%s", &student[i].phone);
+				break;
+			case 5:
+				printf("修改后的高等数学成绩为");
+				scanf("%d", &student[i].score1);
+				break;
+			case 6:
+				printf("修改后的英语成绩为");
+				scanf("%d", &student[i].score2);
+				break;
+			case 7:
+				printf("修改后的C语言成绩为");
+				scanf("%d", &student[i].score3);
+				break;
+			case 8:
+				printf("修改后的体育成绩为");
+				scanf("%d", &student[i].score4);
+				break;
+			case 9:
+				printf("修改后的课程设计为");
+				scanf("%d", &student[i].score5);
+				break;
+			default:
+			{
+				printf("输入错误！请重新输入\n");
+				revise_number_choice();
+			}
+			}
 		}
+
+	if (match == 0)
+	{
+		printf("错误！无法查找到匹配数据");
+		revise();
 	}
+}
 int revise_number_choice(void)
-	{
-		printf("\n%s%s\n", STARS, STARS);
-		printf("       输入数字选择要更改的内容\n");
-		printf("       0)放弃修改并返回上一级菜单\n");
-		printf("       1)修改姓名\n");
-		printf("       2)修改性别\n");
-		printf("       3)修改年龄\n");
-		printf("       4)修改手机号码\n");
-		printf("       5)修改高等数学成绩\n");
-		printf("       6)修改英语成绩\n");
-		printf("       7)修改C语言成绩\n");
-		printf("       8)修改体育成绩\n");
-		printf("       9)修改课程设计成绩\n");
-		printf("\n%s%s\n", STARS, STARS);
-		int t;
-		scanf("%d", &t);
-		getchar();
-		return t;
-	}
+{
+	printf("\n%s%s\n", STARS, STARS);
+	printf("       输入数字选择要更改的内容\n");
+	printf("       0)放弃修改并返回上一级菜单\n");
+	printf("       1)修改姓名\n");
+	printf("       2)修改性别\n");
+	printf("       3)修改年龄\n");
+	printf("       4)修改手机号码\n");
+	printf("       5)修改高等数学成绩\n");
+	printf("       6)修改英语成绩\n");
+	printf("       7)修改C语言成绩\n");
+	printf("       8)修改体育成绩\n");
+	printf("       9)修改课程设计成绩\n");
+	printf("\n%s%s\n", STARS, STARS);
+	int t;
+	scanf("%d", &t);
+	getchar();
+	return t;
+}
 void revise_name(void)
-	{
-		char name[20];
-		int match = 0;
-		int n;
-		printf("请输入查询的姓名");
-		scanf("%s", &name);
-		getchar();
-		int i;
-		for (i = 0; i <= count; i++)
-			if (strcmp(student[i].name,name) == 0)
-			{
-				match++;
-				printf("\n%s%s\n", STARS, STARS);
-				printf("查找到的学生信息");
-				printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
-				printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
-					student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
-				n = revise_name_choice();
-				switch (n)
-				{
-				case 0: revise();  break;
-				case 1:
-					printf("修改后的学号为");
-					scanf("%ld", &student[i].number);
-					break;
-				case 2:
-					printf("修改后的性别为");
-					scanf("%s", &student[i].sex);
-					break;
-				case 3:
-					printf("修改后的年龄为");
-					scanf("%d", &student[i].age);
-					break;
-				case 4:
-					printf("修改后的手机号码为");
-					scanf("%s", &student[i].phone);
-					break;
-				case 5:
-					printf("修改后的高等数学成绩为");
-					scanf("%d", &student[i].score1);
-					break;
-				case 6:
-					printf("修改后的英语成绩为");
-					scanf("%d", &student[i].score2);
-					break;
-				case 7:
-					printf("修改后的C语言成绩为");
-					scanf("%d", &student[i].score3);
-					break;
-				case 8:
-					printf("修改后的体育成绩为");
-					scanf("%d", &student[i].score4);
-					break;
-				case 9:
-					printf("修改后的课程设计为");
-					scanf("%d", &student[i].score5);
-					break;
-				default:
-					printf("输入错误！请重新输入\n");
-					revise_number_choice();
-				}
-			}
-		if (match == 0)
+{
+	char name[20];
+	int match = 0;
+	int n;
+	printf("请输入查询的姓名");
+	scanf("%s", &name);
+	getchar();
+	int i;
+	for (i = 0; i <= count; i++)
+		if (strcmp(student[i].name, name) == 0)
 		{
-			printf("错误！无法查找到匹配数据");
-			revise();
+			match++;
+			printf("\n%s%s\n", STARS, STARS);
+			printf("查找到的学生信息");
+			printf("\n学号\t\t姓名\t性别\t年龄\t手机号码\t高等数学成绩   英语成绩   C语言成绩   体育成绩   课程设计成绩\n");
+			printf("\n%ld\t%s %s\t%d\t%s\t     %d          %d         %d           %d          %d ", student[i].number, student[i].name, student[i].sex, student[i].age, student[i].phone,
+				student[i].score1, student[i].score2, student[i].score3, student[i].score4, student[i].score5);
+			n = revise_name_choice();
+			switch (n)
+			{
+			case 0: revise();  break;
+			case 1:
+				printf("修改后的学号为");
+				scanf("%ld", &student[i].number);
+				break;
+			case 2:
+				printf("修改后的性别为");
+				scanf("%s", &student[i].sex);
+				break;
+			case 3:
+				printf("修改后的年龄为");
+				scanf("%d", &student[i].age);
+				break;
+			case 4:
+				printf("修改后的手机号码为");
+				scanf("%s", &student[i].phone);
+				break;
+			case 5:
+				printf("修改后的高等数学成绩为");
+				scanf("%d", &student[i].score1);
+				break;
+			case 6:
+				printf("修改后的英语成绩为");
+				scanf("%d", &student[i].score2);
+				break;
+			case 7:
+				printf("修改后的C语言成绩为");
+				scanf("%d", &student[i].score3);
+				break;
+			case 8:
+				printf("修改后的体育成绩为");
+				scanf("%d", &student[i].score4);
+				break;
+			case 9:
+				printf("修改后的课程设计为");
+				scanf("%d", &student[i].score5);
+				break;
+			default:
+				printf("输入错误！请重新输入\n");
+				revise_number_choice();
+			}
 		}
+	if (match == 0)
+	{
+		printf("错误！无法查找到匹配数据");
+		revise();
 	}
+}
 int revise_name_choice(void)
-	{
-		printf("\n%s%s\n", STARS, STARS);
-		printf("       输入数字选择要更改的内容\n");
-		printf("       0)放弃修改并返回上一级菜单\n");
-		printf("       1)修改学号\n");
-		printf("       2)修改性别\n");
-		printf("       3)修改年龄\n");
-		printf("       4)修改手机号码\n");
-		printf("       5)修改高等数学成绩\n");
-		printf("       6)修改英语成绩\n");
-		printf("       7)修改C语言成绩\n");
-		printf("       8)修改体育成绩\n");
-		printf("       9)修改课程设计成绩\n");
-		printf("\n%s%s\n", STARS, STARS);
-		int t;
-		scanf("%d", &t);
-		getchar();
-		return t;
-	}
+{
+	printf("\n%s%s\n", STARS, STARS);
+	printf("       输入数字选择要更改的内容\n");
+	printf("       0)放弃修改并返回上一级菜单\n");
+	printf("       1)修改学号\n");
+	printf("       2)修改性别\n");
+	printf("       3)修改年龄\n");
+	printf("       4)修改手机号码\n");
+	printf("       5)修改高等数学成绩\n");
+	printf("       6)修改英语成绩\n");
+	printf("       7)修改C语言成绩\n");
+	printf("       8)修改体育成绩\n");
+	printf("       9)修改课程设计成绩\n");
+	printf("\n%s%s\n", STARS, STARS);
+	int t;
+	scanf("%d", &t);
+	getchar();
+	return t;
+}
 void deletedata(void)
-	{
+{
 	printf("\n%s%s\n", STARS, STARS);
 	printf("       输入数字选择功能\n");
 	printf("       1)输入学号选择删除条目\n");
@@ -785,20 +785,20 @@ void deletedata(void)
 	case 2:
 		deletedate_name();
 		break;
-	case 3:	
+	case 3:
 		menu();
 		break;
 	default:
 		printf("输入错误！请重新输入\n");
 		deletedata();
 	}
-	}
+}
 void deletedate_number(void)
 {
 	printf("请输入学生学号");
 	long int number;
 	int match = 0;
-	int i,j;
+	int i, j;
 	scanf("%ld", &number);
 	for (i = 0; i <= count; i++)
 		if (student[i].number == number)
@@ -811,7 +811,7 @@ void deletedate_number(void)
 		}
 	if (match == 0)
 	{
-		printf("错误！无法查找到匹配数据");
+		printf("错误！无法查找到匹配数据\n");
 		deletedata();
 	}
 }
