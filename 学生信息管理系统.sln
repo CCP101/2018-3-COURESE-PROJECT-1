@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "学生信息管理系统", "学生信息管理系统\学生信息管理系统.vcxproj", "{DC8ED93E-BDAE-4B1F-AC71-D7C2849AF7E7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "学生信息管理系统", "学生信息管理系统.vcxproj", "{DC8ED93E-BDAE-4B1F-AC71-D7C2849AF7E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1DF3A197-426D-4348-9C0C-1085D4B7CDDD}
+		SolutionGuid = {7B8ACDC2-9070-4F91-A805-CC2FC5273346}
 	EndGlobalSection
 EndGlobal
