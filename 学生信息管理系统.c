@@ -37,7 +37,7 @@ int main()
 {
 	printf("\n%s%s\n", STARS, STARS);
 	printf("       欢迎使用学生信息管理系统\n");
-	printf("       制作人：殷建平 李文涛\n");
+	printf("       制作人：李文涛\n");
 	menu();
 	return 0;
 }

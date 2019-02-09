@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\学生信息管理系统.c">
+    <ClCompile Include="学生信息管理系统.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
